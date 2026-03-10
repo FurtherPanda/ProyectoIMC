@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMI Result</title>
+
+<style>
+
+body{
+font-family:Roboto, Arial;
+background:#f4f6f9;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.bmi{
+font-size:40px;
+color:#3b82f6;
+margin:20px 0;
+}
+
+a{
+color:#3b82f6;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Your BMI Result</h2>
+
+<div class="bmi" th:text="${bmi}"></div>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

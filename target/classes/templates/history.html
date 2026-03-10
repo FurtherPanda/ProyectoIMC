@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BMI History</title>
+
+<style>
+
+body{
+font-family:Roboto, Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+.container{
+width:600px;
+margin:80px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th, td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#3b82f6;
+color:white;
+}
+
+a{
+display:block;
+margin-top:20px;
+text-align:center;
+color:#3b82f6;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 style="text-align:center">BMI History</h2>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Weight</th>
+<th>BMI</th>
+</tr>
+
+<tr th:each="record : ${history}">
+<td th:text="${record.dateRecorded}"></td>
+<td th:text="${record.weight}"></td>
+<td th:text="${record.bmi}"></td>
+</tr>
+
+</table>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

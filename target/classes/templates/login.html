@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IMC App - Login</title>
+<style>
+body{
+font-family: Roboto, Arial;
+background:#f4f6f9;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+margin:0;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+width:320px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#3b82f6;
+border:none;
+color:white;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+a{
+display:block;
+margin-top:15px;
+color:#3b82f6;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>IMC Calculator</h2>
+
+<form action="/login" method="post">
+
+<input type="text" name="username" placeholder="Username">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+<a href="/register">Create account</a>
+
+</div>
+
+</body>
+</html>
