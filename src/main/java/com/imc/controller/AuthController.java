@@ -2,8 +2,10 @@ package com.imc.controller;
 
 import com.imc.model.User;
 import com.imc.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 @Controller
 public class AuthController {
@@ -25,9 +27,16 @@ public class AuthController {
     }
 
     @GetMapping("/dashboard")
-public String dashboard() {
-    return "dashboard";
-}
+    public String dashboard(HttpSession session) {
+
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            return "redirect:/login";
+        }
+
+        return "dashboard";
+    }
 
     @GetMapping("/register")
     public String registerPage() {
@@ -42,26 +51,26 @@ public String dashboard() {
         return "redirect:/login";
     }
 
-@PostMapping("/login")
-public String loginUser(
-        @RequestParam("username") String username,
-        @RequestParam("password") String password,
-        jakarta.servlet.http.HttpSession session,
-        org.springframework.ui.Model model) {
+    @PostMapping("/login")
+    public String loginUser(
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            HttpSession session,
+            Model model) {
 
-    try {
+        try {
 
-        User user = userService.login(username, password);
+            User user = userService.login(username, password);
 
-        session.setAttribute("user", user);
+            session.setAttribute("user", user);
 
-        return "dashboard";
+            return "redirect:/dashboard";
 
-    } catch (Exception e) {
+        } catch (Exception e) {
 
-        model.addAttribute("error", "Invalid username or password");
+            model.addAttribute("error", "Invalid username or password");
 
-        return "login";
+            return "login";
+        }
     }
-}
 }

@@ -1,5 +1,6 @@
 /Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/model/User.java
 /Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/service/BMIService.java
+/Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/controller/HistoryRestController.java
 /Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/repository/UserRepository.java
 /Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/controller/AuthController.java
 /Users/eugeniotapia/Desktop/imc-app/src/main/java/com/imc/App.java
